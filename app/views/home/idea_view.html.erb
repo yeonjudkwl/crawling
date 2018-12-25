@@ -1,0 +1,25 @@
+<div class="container" style="margin-top:50px;">
+     <table>
+        <thead>
+          <tr>
+              <th>제목</th>
+              <th>부제목</th>
+              <th>득표수</th>
+              <th>제출자</th>
+              <th>번호</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <% @idea.each do |i| %>
+              <tr>
+                <td><%= i.title %></td>
+                <td><%= i.subtitle %></td>
+                <td><%= i.vote %></td>
+                <td><%= User.find_by_number(i.cap).name %></td>
+                <td><%= i.number %></td>
+              </tr>
+            <% end %>
+        </tbody>
+      </table>
+</div>
